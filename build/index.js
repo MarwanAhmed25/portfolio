@@ -23,7 +23,10 @@ app.use(body_parser_1.default.json());
 app.use((0, cookie_parser_1.default)());
 //configre the server to listen to port and running it
 app.listen(PORT, () => {
-    console.log(`server running on port ${PORT}`);
+    console.log(`server running on port ${PORT}...`);
+});
+app.get('/', (req, res) => {
+    res.send('home page');
 });
 (0, work_1.default)(app);
 (0, project_1.default)(app);
