@@ -27,7 +27,7 @@ app.listen(PORT, (): void => {
 });
 
 app.get('/',(req,res)=>{
-    res.send('hell0');
+    res.send('home page');
 });
 
 work(app);
