@@ -12,7 +12,7 @@
     "env-variable": "export NODE_TLS_REJECT_UNAUTHORIZED='0'",
     "up": "db-migrate up",
     "down": "env=test db-migrate down",
-    "start": "node ./build/index.js",
+    "start": "npm run build && node ./build/index.js",
     "npm start": "NODE_DEBUG=* node index.js",
     "test": "env=development npm run up up && npm run build && jasmine && npm run down",
     "startx": "npm run build && node build/index.js",
