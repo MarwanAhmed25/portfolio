@@ -23,7 +23,7 @@ app.use(cookieParser());
 
 //configre the server to listen to port and running it
 app.listen(PORT, (): void => {
-    console.log(`server running on port ${PORT}`);
+    console.log(`server running on port ${PORT}...`);
 });
 
 app.get('/',(req,res)=>{
