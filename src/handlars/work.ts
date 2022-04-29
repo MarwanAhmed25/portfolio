@@ -9,7 +9,7 @@ async function index(req: Request, res: Response) {
     
     try {
         const resault = await work_obj.index();
-        res.status(200).json(resault);
+        res.status(200).render('index',{result:resault});
     } catch (e) {
         res.status(400).json(`${e}`);
     }
