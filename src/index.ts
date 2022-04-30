@@ -4,13 +4,11 @@ import cors from 'cors';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
-import work from './handlars/work';
-import skill from './handlars/skill';
-import types from './handlars/type';
-import project_skill from './handlars/project_skill';
-import project from './handlars/project';
 import {Skill} from './models/skill';
 import { Project } from './models/project';
+import {Type} from './models/type';
+import { Project_skill } from './models/project_skill';
+import {Work} from './models/work';
 
 dotenv.config();
 
@@ -32,22 +30,20 @@ app.listen(PORT, (): void => {
     console.log(`server running on port ${PORT}...`);
 });
 
+const skill_obj = new Skill(), project_obj = new Project(), type_obj = new Type(), project_skill_obj = new Project_skill(), work_obj = new Work();
+
 
 app.get('/',async (req,res)=>{
-    const skill_obj = new Skill();
     const skills = await skill_obj.index();
-    
-    const project_obj = new Project();
     const projects = await project_obj.index();
+    const types = await type_obj.index();
+    const project_skills = await project_skill_obj.index();
+    const works = await work_obj.index();
     
-    res.render('index', {skills:skills, projects:projects});
+    
+    res.render('index', {skills, projects, works, types, project_skills});
 });
 
-work(app);
-project(app);
-skill(app);
-types(app);
-project_skill(app);
 
 //export the app to use when importing the file
 export default app;
