@@ -20,7 +20,7 @@
     </div>
     <nav class="navbar">
         <div class="max-width">
-            <div class="logo"><a href="#">Portfo<span>lio.</span></a></div>
+            <div class="logo"><a href="#">MARW<span>AN</span></a></div>
             <ul class="menu">
                 <li><a href="#home" class="menu-btn">Home</a></li>
                 <li><a href="#about" class="menu-btn">About</a></li>
@@ -53,12 +53,12 @@
             <h2 class="title">About me</h2>
             <div class="about-content">
                 <div class="column left">
-                    <img src="images/profile-0.png" alt="">
+                    <img src="images/profile-0.jpg" alt="">
                 </div>
                 <div class="column right">
                     <div class="text">I'm Marwan and I'm a <span class="typing-2"></span></div>
                     <p>I’m a Back-end Software Engineer who loves building web applications, I recently developed web applications using NodeJs. I'm excited to develop my skills and combine my passion for learning and building Web applications. I worked on many projects during my training in Udacity, in the Nano-degree scholarship, and four years in the Faculty of Computers and Information, Department of Computer Science and Software Development.</p>
-                    <a href="#">Download CV</a>
+                    <a href="./cv/CV.pdf" download>Download CV</a>               
                 </div>
             </div>
         </div>
@@ -71,13 +71,15 @@
             <div class="serv-content">
 
                 <% for(let i = 0; i< works.length; i++) {%>
-                    <div class="card">
-                        <div class="box">
-                            <i class="fas fa-paint-brush"></i>
-                            <div class="text"><%= works[i].title %></div>
-                            <p><%= works[i].description %></p>
+                    <a href="works/<%= works[i].slug %>">
+                        <div class="card">
+                            <div class="box">
+                                <i class="fas fa-paint-brush"></i>
+                                <div class="text"><%= works[i].title %></div>
+                                <p><%= works[i].description %></p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <% } %>
             </div>
         </div>
@@ -98,7 +100,7 @@
                     <% for(let i = 0; i< skills.length; i++) {%>
                     <div class="bars">
                         <div class="info">
-                            <span><%= skills[i].name %></span>
+                            <span><a href="skills/<%= skills[i].slug %>"><%= skills[i].name %></a></span>
                             <span><%= skills[i].parsange %> %</span>
                         </div>
                         <div class="line html"></div>
@@ -117,13 +119,15 @@
             <div class="carousel owl-carousel">
                 
                 <% for(let i = 0; i< projects.length; i++) {%>
-                    <div class="card">
-                        <div class="box">
-                            <img src="images/profile-1.jpeg" alt="">
-                            <div class="text">Someone name</div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <a href="projects/<%= projects[i].slug %>">
+                        <div class="card" style="color: white;">
+                            <div class="box">
+                                <img src="images/profile-1.jpeg" alt="">
+                                <div class="text"><%= projects[i].name %></div>
+                                <p><%= projects[i].description %></p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 <% } %>
 
             </div>
@@ -137,7 +141,7 @@
             <div class="contact-content">
                 <div class="column left">
                     <div class="text">Get in Touch</div>
-                    <p>I'm available for work now as a Full-stack engineer or especially as a Back-end engineer</p>
+                    <p>I'm available for work now as a Full-stack engineer or especially as a Back-end engineer.</p>
                     <div class="icons">
                         <div class="row">
                             <i class="fas fa-user"></i>
@@ -164,20 +168,20 @@
                 </div>
                 <div class="column right">
                     <div class="text">Message me</div>
-                    <form action="#">
+                    <form action="/send_mail" method="post">
                         <div class="fields">
                             <div class="field name">
-                                <input type="text" placeholder="Name" required>
+                                <input type="text" name="name" placeholder="Name" required>
                             </div>
                             <div class="field email">
-                                <input type="email" placeholder="Email" required>
+                                <input type="email" name="email" placeholder="Email" required>
                             </div>
                         </div>
                         <div class="field">
-                            <input type="text" placeholder="Subject" required>
+                            <input type="text" name="subject" placeholder="Subject" required>
                         </div>
                         <div class="field textarea">
-                            <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
+                            <textarea cols="30" rows="10" name="message" placeholder="Message.." required></textarea>
                         </div>
                         <div class="button-area">
                             <button type="submit">Hire me</button>

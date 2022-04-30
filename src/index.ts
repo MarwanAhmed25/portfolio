@@ -9,6 +9,10 @@ import { Project } from './models/project';
 import {Type} from './models/type';
 import { Project_skill } from './models/project_skill';
 import {Work} from './models/work';
+import skillsRoutes from './handlars/skill';
+import projectsRoutes from './handlars/project';
+import typesRoutes from './handlars/type';
+import worksRoutes from './handlars/work';
 
 dotenv.config();
 
@@ -19,6 +23,9 @@ const app = express();
 //usig middel ware cors and body parser
 app.use(cors());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(cookieParser());
 
 app.set('view engine', 'ejs');
@@ -40,10 +47,21 @@ app.get('/',async (req,res)=>{
     const project_skills = await project_skill_obj.index();
     const works = await work_obj.index();
     
-    
     res.render('index', {skills, projects, works, types, project_skills});
 });
 
+
+app.post('/send_mail',(req, res)=>{
+    console.log(req.body);
+
+    res.redirect('/');
+    
+});
+
+skillsRoutes(app);
+worksRoutes(app);
+projectsRoutes(app);
+typesRoutes(app);
 
 //export the app to use when importing the file
 export default app;

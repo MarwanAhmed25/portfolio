@@ -18,11 +18,11 @@ class Skill {
             throw new Error(`${e}`);
         }
     }
-    async show(id) {
+    async show(slug) {
         try {
             const conn = await database_1.default.connect();
-            const sql = 'select * from skill where id =($1);';
-            const res = await conn.query(sql, [id]);
+            const sql = 'select * from skill where slug =($1);';
+            const res = await conn.query(sql, [slug]);
             conn.release();
             return res.rows[0];
         }

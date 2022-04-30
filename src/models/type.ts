@@ -20,11 +20,11 @@ export class Type {
         }
     }
 
-    async show(id: number): Promise<type> {
+    async show(slug: string): Promise<type> {
         try {
             const conn = await Client.connect();
-            const sql = 'select * from types where id =($1);';
-            const res = await conn.query(sql, [id]);
+            const sql = 'select * from types where slug =($1);';
+            const res = await conn.query(sql, [slug]);
             conn.release();
             return res.rows[0];
         } catch (e) {
