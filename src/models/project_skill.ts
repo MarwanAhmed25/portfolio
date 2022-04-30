@@ -21,11 +21,11 @@ export class Project_skill {
         }
     }
 
-    async show(id: number): Promise<project_skill> {
+    async show(slug: string): Promise<project_skill> {
         try {
             const conn = await Client.connect();
-            const sql = 'select * from project_skill where id =($1);';
-            const res = await conn.query(sql, [id]);
+            const sql = 'select * from project_skill where slug =($1);';
+            const res = await conn.query(sql, [slug]);
             conn.release();
             return res.rows[0];
         } catch (e) {

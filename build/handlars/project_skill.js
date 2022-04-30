@@ -15,7 +15,7 @@ async function index(req, res) {
 //return only one brand from databse using id in request params
 async function show(req, res) {
     try {
-        const resault = await t_obj.show(req.params.id);
+        const resault = await t_obj.show(req.params.slug);
         if (resault == undefined)
             return res.status(400).json('row not exist');
         res.status(200).json(resault);
@@ -26,6 +26,6 @@ async function show(req, res) {
 }
 function mainRoutes(app) {
     app.get('/project_skill', index);
-    app.get('/project_skill/:id', show);
+    app.get('/project_skill/:slug', show);
 }
 exports.default = mainRoutes;

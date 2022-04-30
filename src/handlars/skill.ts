@@ -17,7 +17,7 @@ async function index(req: Request, res: Response) {
 //return only one brand from databse using id in request params
 async function show(req: Request, res: Response) {
     try {
-        const resault = await skill_obj.show(req.params.id as unknown as number);
+        const resault = await skill_obj.show(req.params.slug);
         if(resault == undefined)
             return res.status(400).json('row not exist');
         res.status(200).json(resault);
@@ -30,7 +30,7 @@ async function show(req: Request, res: Response) {
 
 function mainRoutes(app: Application) {
     app.get('/skills', index);
-    app.get('/skills/:id', show);
+    app.get('/skills/:slug', show);
 }
 
 export default mainRoutes;

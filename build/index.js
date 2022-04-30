@@ -14,6 +14,10 @@ const project_1 = require("./models/project");
 const type_1 = require("./models/type");
 const project_skill_1 = require("./models/project_skill");
 const work_1 = require("./models/work");
+const skill_2 = __importDefault(require("./handlars/skill"));
+const project_2 = __importDefault(require("./handlars/project"));
+const type_2 = __importDefault(require("./handlars/type"));
+const work_2 = __importDefault(require("./handlars/work"));
 dotenv_1.default.config();
 //initial port and app
 const PORT = process.env.PORT || 5000;
@@ -21,6 +25,9 @@ const app = (0, express_1.default)();
 //usig middel ware cors and body parser
 app.use((0, cors_1.default)());
 app.use(body_parser_1.default.json());
+app.use(body_parser_1.default.urlencoded({
+    extended: true
+}));
 app.use((0, cookie_parser_1.default)());
 app.set('view engine', 'ejs');
 app.set('views', 'front');
@@ -39,5 +46,13 @@ app.get('/', async (req, res) => {
     const works = await work_obj.index();
     res.render('index', { skills, projects, works, types, project_skills });
 });
+app.post('/send_mail', (req, res) => {
+    console.log(req.body);
+    res.redirect('/');
+});
+(0, skill_2.default)(app);
+(0, work_2.default)(app);
+(0, project_2.default)(app);
+(0, type_2.default)(app);
 //export the app to use when importing the file
 exports.default = app;
