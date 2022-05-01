@@ -120,7 +120,7 @@ section .title::after{
     transition: color 0.3s ease;
 }
 .navbar .menu li a:hover{
-    color: crimson;
+    color: black;
 }
 .navbar.sticky .menu li a:hover{
     color: #fff;
@@ -679,3 +679,17 @@ footer span a:hover{
     }
 }
 
+.foot {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  } 
+
+  .navbar{
+      background-color: crimson;
+      padding-top: 10px;
+        padding-bottom: 10px;     
+      align-items: center;
+  }

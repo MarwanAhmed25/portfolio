@@ -6,7 +6,7 @@ const project_obj = new project_1.Project();
 async function index(req, res) {
     try {
         const resault = await project_obj.index();
-        res.status(200).json(resault);
+        res.status(200).render('projects', { projects: resault });
     }
     catch (e) {
         res.status(400).json(`${e}`);
@@ -18,7 +18,7 @@ async function show(req, res) {
         const resault = await project_obj.show(req.params.slug);
         if (resault == undefined)
             return res.status(400).json('row not exist');
-        res.status(200).json(resault);
+        res.status(200).render('project', { project: resault });
     }
     catch (e) {
         res.status(400).json(`${e}`);

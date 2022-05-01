@@ -13,8 +13,9 @@ import skillsRoutes from './handlars/skill';
 import projectsRoutes from './handlars/project';
 import typesRoutes from './handlars/type';
 import worksRoutes from './handlars/work';
-
+import fs from 'fs';
 dotenv.config();
+
 
 
 //initial port and app
@@ -50,9 +51,14 @@ app.get('/',async (req,res)=>{
     res.render('index', {skills, projects, works, types, project_skills});
 });
 
-
+ 
 app.post('/send_mail',(req, res)=>{
     res.redirect('/');
+    
+});
+
+app.get('/contact',(req, res)=>{
+    res.render('contact');
     
 });
 

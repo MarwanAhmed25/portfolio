@@ -9,7 +9,7 @@ async function index(req: Request, res: Response) {
     
     try {
         const resault = await project_obj.index();
-        res.status(200).json(resault);
+        res.status(200).render('projects',{projects:resault});
     } catch (e) {
         res.status(400).json(`${e}`);
     }
@@ -20,7 +20,7 @@ async function show(req: Request, res: Response) {
         const resault = await project_obj.show(req.params.slug);
         if(resault == undefined)
             return res.status(400).json('row not exist');
-        res.status(200).json(resault);
+        res.status(200).render('project',{project:resault});
     } catch (e) {
         res.status(400).json(`${e}`);
     }
