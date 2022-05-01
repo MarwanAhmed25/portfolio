@@ -52,8 +52,6 @@ app.get('/',async (req,res)=>{
 
 
 app.post('/send_mail',(req, res)=>{
-    console.log(req.body);
-
     res.redirect('/');
     
 });
