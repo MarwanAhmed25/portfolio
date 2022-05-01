@@ -49,9 +49,6 @@ app.get('/', async (req, res) => {
 app.post('/send_mail', (req, res) => {
     res.redirect('/');
 });
-app.get('/contact', (req, res) => {
-    res.render('contact');
-});
 (0, skill_2.default)(app);
 (0, work_2.default)(app);
 (0, project_2.default)(app);

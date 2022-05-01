@@ -1,8 +1,52 @@
-
 <%- include('header'); %>
+<style>
+  * {
+    margin: 0;
+  }
 
-<section>
-    <h1>work details</h1>
-</section>
+  a {
+    text-decoration: none;
+  }
+  body {
+    background: #3399ff;
+  }
+  a h2 {
+    background-color: crimson;
+    margin: 0;
+    color: white;
+    padding: 20px;
+  }
+  a h2:hover {
+    color: black;
+  }
 
-<%- include('footer'); %>
+  ul {
+    background: #3399ff;
+    padding: 20px;
+    margin: 0;
+    font-size: 30px;
+  }
+
+  ul li {
+    background: #cce5ff;
+    color: darkblue;
+    margin: 5px;
+    padding: 20px;
+    text-decoration: none;
+    list-style-type: none;
+  }
+
+  span {
+    color: darkslategrey;
+  }
+</style>
+
+<a href="/"><h2>Back</h2></a>
+
+<ul>
+  <li><span>Title</span>: <%= work.title %></li>
+  <li><span>Company</span>: <a href="<%= work.link %>"><%= work.company %></a></li>
+  <li><span>Begin date</span>: <%= work.start %></li>
+  <li><span>End date</span>: <%= work.finish %></li>
+  <li><span>Description</span>:<%= work.description %></li>
+</ul>

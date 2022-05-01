@@ -8,9 +8,9 @@ export type project = {
     description?: string,
     images:Array<string>,
     link: string,
-    work_id: number,
+    work_slug: string,
     code: string,
-    type_id:number
+    type_slug:string
   };
 
 export class Project {

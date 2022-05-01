@@ -13,7 +13,6 @@ import skillsRoutes from './handlars/skill';
 import projectsRoutes from './handlars/project';
 import typesRoutes from './handlars/type';
 import worksRoutes from './handlars/work';
-import fs from 'fs';
 dotenv.config();
 
 
@@ -57,10 +56,7 @@ app.post('/send_mail',(req, res)=>{
     
 });
 
-app.get('/contact',(req, res)=>{
-    res.render('contact');
-    
-});
+
 
 skillsRoutes(app);
 worksRoutes(app);

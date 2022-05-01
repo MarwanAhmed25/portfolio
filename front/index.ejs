@@ -1,112 +1,147 @@
+<%- include('header'); %>
 
-    <%- include('header'); %>
-    <!-- home section start -->
-    <section class="home" id="home">
-        <div class="max-width">
-            <div class="home-content">
-                <div class="text-1">Hello, my name is</div>
-                <div class="text-2">Marwan Ahmed</div>
-                <div class="text-3">And I'm a <span class="typing"></span></div>
-                <a href="#contact">Hire me</a>
+<body>
+  <div class="scroll-up-btn">
+    <i class="fas fa-angle-up"></i>
+  </div>
+  <nav class="navbar">
+    <div class="max-width">
+      <div class="logo">
+        <a href="#">MARW<span style="color: black">AN</span></a>
+      </div>
+      <ul class="menu">
+        <li><a href="/" class="menu-btn">Home</a></li>
+        <li><a href="/#about" class="menu-btn">About</a></li>
+        <li><a href="/#services" class="menu-btn">Works</a></li>
+        <li><a href="/#skills" class="menu-btn">Skills</a></li>
+        <li><a href="/#teams" class="menu-btn">Projects</a></li>
+        <li><a href="/#contact" class="menu-btn">Contact</a></li>
+      </ul>
+      <div class="menu-btn"></div>
+    </div>
+  </nav>
+  <!-- home section start -->
+  <section class="home" id="home">
+    <div class="max-width">
+      <div class="home-content">
+        <div class="text-1">Hello, my name is</div>
+        <div class="text-2">Marwan Ahmed</div>
+        <div class="text-3">And I'm a <span class="typing"></span></div>
+        <a href="#contact">Hire me</a>
+        <a target="_blank" href="https://www.facebook.com/MarwanAhmed225/"><i class="fa fa-facebook"></i></a>
+        <a target="_blank" href="https://github.com/MarwanAhmed25?tab=repositories"><i class="fa fa-github"></i></a>
+        <a target="_blank" href="https://www.linkedin.com/in/marwan-ahmed-1a12b71b6/"><i class="fa fa-linkedin"></i></a>
+      </div>
+    </div>
+  </section>
 
-            </div>
-            <i class="fa-solid fa-github"></i>
-
+  <!-- about section start -->
+  <section class="about" id="about">
+    <div class="max-width">
+      <h2 class="title">About me</h2>
+      <div class="about-content">
+        <div class="column left">
+          <img src="images/profile-0.jpg" alt="" />
         </div>
-    </section>
-
-    <!-- about section start -->
-    <section class="about" id="about">
-        <div class="max-width">
-            <h2 class="title">About me</h2>
-            <div class="about-content">
-                <div class="column left">
-                    <img src="images/profile-0.jpg" alt="">
-                </div>
-                <div class="column right">
-                    <div class="text">I'm Marwan and I'm a <span class="typing-2"></span></div>
-                    <p>I'm a Back-end Software Engineer who loves building web applications, I recently developed web applications using NodeJs. I'm excited to develop my skills and combine my passion for learning and building Web applications. I worked on many projects during my training in Udacity, in the Nano-degree scholarship, and four years in the Faculty of Computers and Information, Department of Computer Science and Software Development.</p>
-                    <a href="./cv/CV.pdf" download>Download CV</a>               
-                </div>
-            </div>
+        <div class="column right">
+          <div class="text">
+            I'm Marwan and I'm a <span class="typing-2"></span>
+          </div>
+          <p>
+            I'm a Back-end Software Engineer who loves building web
+            applications, I recently developed web applications using NodeJs.
+            I'm excited to develop my skills and combine my passion for learning
+            and building Web applications. I worked on many projects during my
+            training in Udacity, in the Nano-degree scholarship, and four years
+            in the Faculty of Computers and Information, Department of Computer
+            Science and Software Development.
+          </p>
+          <a href="./cv/CV.pdf" download>Download CV</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- services section start -->
-    <section class="services" id="services">
-        <div class="max-width">
-            <h2 class="title">My experiences</h2>
-            <div class="serv-content" >
-
-                <% for(let i = 0; i< works.length; i++) {%>
-                        <div class="card" style="margin-top: 10px; padding-top: 5px;">
-                            <a href="works/<%= works[i].slug %>" >
-                            <div class="box" >
-                                <i class="fa-solid fa-laptop-code" style="color: brown;font-size: 25px;"><%= works[i].company %></i>
-                                <div class="text" style="font-size: 20px;"><%= works[i].title %></div>
-                                <p style="font-size: 18px;"><%= works[i].description.slice(0,200) %>...</p>
-                            </div>
-                        </a>
-                        </div> 
-                    
-
-
-                    <% } %>
+  <!-- services section start -->
+  <section class="services" id="services">
+    <div class="max-width">
+      <h2 class="title">My experiences</h2>
+      <div class="serv-content">
+        <% for(let i = 0; i< works.length; i++) {%>
+        <div class="card" style="margin-top: 10px; padding-top: 5px">
+          <a href="works/<%= works[i].slug %>">
+            <div class="box">
+              <i
+                class="fa-solid fa-laptop-code"
+                style="color: brown; font-size: 25px"
+                ><%= works[i].company %></i
+              >
+              <div class="text" style="font-size: 20px">
+                <%= works[i].title %>
+              </div>
+              <p style="font-size: 18px">
+                <%= works[i].description.slice(0,200) %>...
+              </p>
             </div>
+          </a>
         </div>
-        <!-- <a href="/works" class="more"><button>More</button></a> --> 
-    </section>
 
-    <!-- skills section start -->
-    <section class="skills" id="skills">
-        <div class="max-width">
-            <h2 class="title">My skills</h2>
-            <div class="skills-content">
-                <div class="column left">
-                    <div class="text">My creative skills & experiences.</div>
-                    <p>I'm doing many projects using all of my skills. My learning is project-based. I'm using all of my skills in building or designing projects and pages.</p>
-                    <a href="/projects">Read more</a>
-                </div>
-                <div class="column right">
+        <% } %>
+      </div>
+    </div>
+    <!-- <a href="/works" class="more"><button>More</button></a> -->
+  </section>
 
-                    <% for(let i = 0; i< skills.length; i++) {%>
-                        
-                    <div class="bars">
-                        <div class="info">
-                            <span><a href="skills/<%= skills[i].slug %>"><%= skills[i].name %></a></span>
-                            <span><%= skills[i].persantge %> %</span>
-                        </div>
-                        <div class="line html"></div>
-                    </div>
-                    <% } %>
+  <!-- skills section start -->
+  <section class="skills" id="skills">
+    <div class="max-width">
+      <h2 class="title">My skills</h2>
+      <div class="skills-content">
+        <div class="column left">
+          <div class="text">My creative skills & experiences.</div>
+          <p>
+            I'm doing many projects using all of my skills. My learning is
+            project-based. I'm using all of my skills in building or designing
+            projects and pages.
+          </p>
+          <a href="/#teams">Read more</a>
+        </div>
+        <div class="column right">
+          <% for(let i = 0; i< skills.length; i++) {%>
 
-                </div>
+          <div class="bars">
+            <div class="info">
+              <span><a href="#"><%= skills[i].name %></a></span>
+              <span><%= skills[i].persantge %> %</span>
             </div>
+            <div class="line html"></div>
+          </div>
+          <% } %>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- teams section start -->
-    <section class="teams" id="teams">
-        <div class="max-width">
-            <h2 class="title">My Projects</h2>
-            <div class="carousel owl-carousel">
-                
-                <% for(let i = 0; i< projects.length; i++) {%>
-                    <a href="projects/<%= projects[i].slug %>" style="margin-top: 10px;">
-                        <div class="card" style="color: white;">
-                            <div class="box">
-                                <img src="<%= projects[i].images[0] %>" alt="">
-                                <div class="text"><%= projects[i].name %></div>
-                                <p><%= projects[i].description.slice(0,200) %>...</p>
-                            </div>
-                        </div>
-                    </a>
-                <% } %>
-
+  <!-- teams section start -->
+  <section class="teams" id="teams">
+    <div class="max-width">
+      <h2 class="title">My Projects</h2>
+      <div class="carousel owl-carousel">
+        <% for(let i = 0; i< projects.length; i++) {%>
+        <a href="projects/<%= projects[i].slug %>" style="margin-top: 10px">
+          <div class="card" style="color: white">
+            <div class="box">
+              <img src="<%= projects[i].images[0] %>" alt="" />
+              <div class="text"><%= projects[i].name %></div>
+              <p><%= projects[i].description.slice(0,200) %>...</p>
             </div>
-        </div>
-        <!-- <a href="/projects" class="more">More</a>  -->
+          </div>
+        </a>
+        <% } %>
+      </div>
+    </div>
+    <!-- <a href="/projects" class="more">More</a>  -->
+  </section>
 
-    </section>
-
-    <%- include('contact'); %>
+  <%- include('contact'); %>
+</body>
