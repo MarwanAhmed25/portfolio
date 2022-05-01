@@ -47,7 +47,6 @@ app.get('/', async (req, res) => {
     res.render('index', { skills, projects, works, types, project_skills });
 });
 app.post('/send_mail', (req, res) => {
-    console.log(req.body);
     res.redirect('/');
 });
 (0, skill_2.default)(app);

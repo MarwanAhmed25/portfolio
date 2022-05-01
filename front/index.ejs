@@ -71,18 +71,18 @@
             <div class="serv-content">
 
                 <% for(let i = 0; i< works.length; i++) {%>
-                    <a href="works/<%= works[i].slug %>">
-                        <div class="card">
+                         <div class="card" style="margin-top: 10px; padding-top: 10px;">
                             <div class="box">
-                                <i class="fas fa-paint-brush"></i>
-                                <div class="text"><%= works[i].title %></div>
-                                <p><%= works[i].description %></p>
+                                <i class="fa-solid fa-laptop-code" style="color: brown;font-size: 25px;"><%= works[i].company %></i>
+                                <div class="text" style="font-size: 20px;"><%= works[i].title %></div>
+                                <p style="font-size: 18px;"><%= works[i].description.slice(0,200) %>...</p>
                             </div>
-                        </div>
-                    </a>
+                        </div> 
+
                     <% } %>
             </div>
         </div>
+        <!-- <a href="/works" class="more"><button>More</button></a> --> 
     </section>
 
     <!-- skills section start -->
@@ -100,7 +100,7 @@
                     <% for(let i = 0; i< skills.length; i++) {%>
                     <div class="bars">
                         <div class="info">
-                            <span><a href="skills/<%= skills[i].slug %>"><%= skills[i].name %></a></span>
+                            <span><a href="#"><%= skills[i].name %></a></span>
                             <span><%= skills[i].parsange %> %</span>
                         </div>
                         <div class="line html"></div>
@@ -119,12 +119,12 @@
             <div class="carousel owl-carousel">
                 
                 <% for(let i = 0; i< projects.length; i++) {%>
-                    <a href="projects/<%= projects[i].slug %>">
+                    <a href="#" style="margin-top: 10px;">
                         <div class="card" style="color: white;">
                             <div class="box">
-                                <img src="images/profile-1.jpeg" alt="">
+                                <img src="<%= projects[i].images[0] %>" alt="">
                                 <div class="text"><%= projects[i].name %></div>
-                                <p><%= projects[i].description %></p>
+                                <p><%= projects[i].description.slice(0,200) %>...</p>
                             </div>
                         </div>
                     </a>
@@ -132,6 +132,8 @@
 
             </div>
         </div>
+        <!-- <a href="/projects" class="more">More</a>  -->
+
     </section>
 
     <!-- contact section start -->
