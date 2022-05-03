@@ -12,3 +12,4 @@ const Client = new pg_1.Pool({
     }
 });
 exports.default = Client;
+//export NODE_TLS_REJECT_UNAUTHORIZED='0'

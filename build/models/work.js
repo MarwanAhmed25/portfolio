@@ -30,5 +30,31 @@ class Work {
             throw new Error(`${e}`);
         }
     }
+    ////////////////////////////////////
+    async create(p) {
+        try {
+            const conn = await database_1.default.connect();
+            const s = p.company;
+            if (s != undefined)
+                p.slug = s.toLowerCase().split(' ').join('-');
+            else
+                throw new Error('not valid company name.');
+            const sql = 'insert into work (title,  link,  finish, description,company, start,slug) values($1,$2,$3,$4,$5,$6,$7)RETURNING *;';
+            const res = await conn.query(sql, [
+                p.title,
+                p.link,
+                p.end,
+                p.description,
+                p.company,
+                p.begin,
+                p.slug
+            ]);
+            conn.release();
+            return res.rows[0];
+        }
+        catch (e) {
+            throw new Error(`${e}`);
+        }
+    }
 }
 exports.Work = Work;

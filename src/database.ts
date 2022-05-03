@@ -10,3 +10,4 @@ const Client = new Pool({
 });
 
 export default Client;
+//export NODE_TLS_REJECT_UNAUTHORIZED='0'

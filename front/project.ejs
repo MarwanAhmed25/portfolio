@@ -1,0 +1,78 @@
+
+<%- include('header'); %>
+<style>
+  
+    *{
+    margin: 0;
+
+    }
+    
+    a{
+        text-decoration: none;
+    
+    }
+    
+    img{
+        width: 300px;
+        height: 300px;
+    }
+
+      a h2{
+          background-color: crimson;
+          margin: 0;
+          color: white;
+          padding: 20px;
+          
+      }
+      a h2:hover{
+          color: black;
+      }
+        
+        ul {
+          background: #3399ff;
+          padding: 20px;
+          margin: 0;
+          font-size: 30px;
+        }
+        
+        
+        ul li {
+          background: #cce5ff;
+          color: darkblue;
+          margin: 5px;
+          padding: 20px;
+          text-decoration: none;
+          list-style-type: none;
+        }
+  
+  span{
+    color: darkslategrey;
+  }
+  body{
+    background: #3399ff;
+
+  }
+  
+  </style>
+
+<a href="/"><h2>Back</h2></a>
+
+<ul>
+    <li><span>Name</span>: <%= project.name %></li>
+    <li><span>Demo</span>: <a href="<%= project.link %>">Here</a></li>
+    <li><span>code</span>: <a href="<%= project.code %>">Here</a></li>
+
+
+    <% for(let i= 0; i<project.images.length; i++){ %>
+        <img src="/<%= project.images[i] %>" alt="none"/> 
+
+        <% } %>
+
+
+
+    <li><span>Work</span>:<%= work_company %></li>
+    <li><span>Type</span>:<%= type %></li>
+    <li><span>Description</span>:<%= project.description %></li>
+</ul>
+
+           
