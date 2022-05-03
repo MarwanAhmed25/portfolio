@@ -1,6 +1,6 @@
 /*  import google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
-
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+*/
 *{
     margin: 0;
     padding: 0;
@@ -10,6 +10,8 @@
 html{
     scroll-behavior: smooth;
 }
+
+
 
 /* custom scroll bar */
 ::-webkit-scrollbar {
@@ -205,7 +207,7 @@ section .title::after{
     margin-top: 20px;
     font-weight: 400;
     border-radius: 6px;
-    border: 2px solid crimson;
+    
     transition: all 0.3s ease;
 }
 .home .home-content a:hover{
@@ -692,4 +694,22 @@ footer span a:hover{
       padding-top: 10px;
         padding-bottom: 10px;     
       align-items: center;
+  }
+
+#facebook:hover,#linkedin:hover,#github:hover {
+    opacity: 0.7;
+}
+
+#facebook {
+  background: #3B5998;
+  color: white;
+}
+#linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+#github {
+    background: #2c4762;
+    color: white;
   }

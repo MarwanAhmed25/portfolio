@@ -16,6 +16,10 @@
         <li><a href="/#skills" class="menu-btn">Skills</a></li>
         <li><a href="/#teams" class="menu-btn">Projects</a></li>
         <li><a href="/#contact" class="menu-btn">Contact</a></li>
+        <% if(!user) {%>
+        <li><a href="/works/create" class="menu-btn">create work</a></li>
+        <li><a href="/projects/create" class="menu-btn">create project</a></li>
+        <% } %>
       </ul>
       <div class="menu-btn"></div>
     </div>
@@ -27,10 +31,10 @@
         <div class="text-1">Hello, my name is</div>
         <div class="text-2">Marwan Ahmed</div>
         <div class="text-3">And I'm a <span class="typing"></span></div>
-        <a href="#contact">Hire me</a>
-        <a target="_blank" href="https://www.facebook.com/MarwanAhmed225/"><i class="fa fa-facebook"></i></a>
-        <a target="_blank" href="https://github.com/MarwanAhmed25?tab=repositories"><i class="fa fa-github"></i></a>
-        <a target="_blank" href="https://www.linkedin.com/in/marwan-ahmed-1a12b71b6/"><i class="fa fa-linkedin"></i></a>
+        <a href="#contact" style="border: 2px solid crimson;">Hire me</a>
+        <a id="facebook" target="_blank" href="https://www.facebook.com/MarwanAhmed225/"><i class="fa fa-facebook"></i></a>
+        <a id="github" target="_blank" href="https://github.com/MarwanAhmed25?tab=repositories"><i class="fa fa-github"></i></a>
+        <a id="linkedin" target="_blank" href="https://www.linkedin.com/in/marwan-ahmed-1a12b71b6/"><i class="fa fa-linkedin"></i></a>
       </div>
     </div>
   </section>

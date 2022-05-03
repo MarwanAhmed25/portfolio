@@ -1,0 +1,97 @@
+<%- include('header'); %>
+<style>
+  * {
+    margin: 0;
+  }
+  body {
+    background: #3399ff;
+  }
+  input, select, textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+  a {
+    text-decoration: none;
+  }
+
+  a h2 {
+    background-color: crimson;
+    margin: 0;
+    color: white;
+    padding: 20px;
+  }
+  a h2:hover {
+    color: black;
+  }
+
+textarea{
+    height: 150px;
+}
+
+button{
+    margin-top: 20px;
+    width: 100%;
+    background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+button:hover{
+    background-color: #45a049;
+}
+  
+  span {
+    color: darkslategrey;
+  }
+</style>
+
+<a href="/"><h2>Back</h2></a>
+
+<div>
+    <form action="/create_work" method="post">
+        <label for="title">Tilte</label>
+        <input name="title" type="text">
+
+        <label for="description">Description</label> 
+        <textarea name="description" type="text"></textarea>
+        
+
+        <label for="company">Company</label>
+        <input name="company" type="text">
+        
+        <label for="link">Link of Company</label>
+        <input name="link" type="url">
+        
+        <label for="end">End</label>            
+        <input name="end" type="date">
+    
+    
+
+        <label for="begin">Start</label>
+        <input name="begin" type="date">
+    
+
+        <button type="submit">create</button>
+    </form>
+</div>
