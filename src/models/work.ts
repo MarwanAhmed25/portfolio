@@ -63,39 +63,5 @@ export class Work {
             throw new Error(`${e}`);
         }
     }
-/* 
-    async update(p: work): Promise<work> {
-        try {
-            const conn = await Client.connect();
-            const sql =
-    'update work set title=($1),  link=($2),  end=($3),  description=($4), company=($5),begin=($6),slug=($8) where id=($7) RETURNING *; ';
-            const res = await conn.query(sql, [
-                p.title,
-                p.link,
-                p.end,
-                p.description,
-                p.company,
-                p.begin,
-                p.id,
-                p.slug
-            ]);
-            conn.release();
-            return res.rows[0];
-        } catch (e) {
-            throw new Error(`${e}`);
-        }
-    }
-
-    async delete(slug: string): Promise<string> {
-        try {
-            const conn = await Client.connect();
-            const sql = 'delete from work where slug =($1);';
-            await conn.query(sql, [slug]);
-            conn.release();
-            return 'deleted';
-        } catch (e) {
-            throw new Error(`${e}`);
-        }
-    }
- */}
+}
 
