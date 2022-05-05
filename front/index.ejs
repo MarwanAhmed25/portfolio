@@ -78,13 +78,13 @@
               <i
                 class="fa-solid fa-laptop-code"
                 style="color: brown; font-size: 25px"
-                ><%= works[i].company %></i
+                ><%= works[i].company.slice(0,25) %></i
               >
               <div class="text" style="font-size: 20px">
-                <%= works[i].title %>
+                <%= works[i].title.slice(0,25) %>...
               </div>
               <p style="font-size: 18px">
-                <%= works[i].description.slice(0,200) %>...
+                <%= works[i].description.slice(0,197) %>...
               </p>
             </div>
           </a>
