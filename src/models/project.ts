@@ -46,7 +46,7 @@ export class Project {
             if(s != undefined)
                 p.slug = s.toLowerCase().split(' ').join('-');
             else throw new Error('not valid name.');
-            console.log(p.slug);
+            
             
             
             const sql =

@@ -38,7 +38,6 @@ class Project {
                 p.slug = s.toLowerCase().split(' ').join('-');
             else
                 throw new Error('not valid name.');
-            console.log(p.slug);
             const sql = 'insert into project (name,  link,  code, description,images, type_slug, work_slug,slug) values($1,$2,$3,$4,$5,$6,$7,$8)RETURNING *;';
             const res = await conn.query(sql, [
                 p.name,

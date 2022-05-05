@@ -44,9 +44,28 @@
 <a href="/"><h2>Back</h2></a>
 
 <ul>
-  <li><span>Title</span>: <%= work.title %></li>
-  <li><span>Company</span>: <a href="<%= work.link %>"><%= work.company %></a></li>
-  <li><span>Begin date</span>: <%= work.start %></li>
-  <li><span>End date</span>: <%= work.finish %></li>
-  <li><span>Description</span>:<%= work.description %></li>
+  <% if(work.title) {%>
+    <li><span>Title</span>: <%= work.title %></li>
+    <% } %>
+  
+
+  <% if(work.company) {%>
+      <li><span>Company</span>: <a href="<%= work.link %>"><%= work.company %></a></li>
+    <% } %>
+  
+
+  <% if(work.start) {%>
+      <li><span>Begin date</span>: <%= ("0" + (work.start.getDate())).slice(-2) %> - <%= ("0" + (work.start.getMonth() + 1)).slice(-2) %> - <%= work.start.getFullYear() %></li>
+    <% } %>
+  
+
+  <% if(work.finish) {%>
+    <li><span>End date</span>: <%= ("0" + (work.finish.getDate())).slice(-2) %> - <%= ("0" + (work.finish.getMonth() + 1)).slice(-2) %> - <%= work.finish.getFullYear() %></li>
+    <% } %>
+  
+
+  <% if(work.description) {%>
+     <li><span>Description</span>:<%= work.description %></li>
+    <% } %>
+  
 </ul>

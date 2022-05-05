@@ -135,7 +135,11 @@
         <a href="projects/<%= projects[i].slug %>" style="margin-top: 10px">
           <div class="card" style="color: white">
             <div class="box">
-              <img src="<%= projects[i].images[0] %>" alt="" />
+              <% if(!projects[i].images[0]) {%>
+                <img src="images/M.jpeg" alt="def" />  
+              <% }else {%>
+                <img src="<%= projects[i].images[0] %>" alt="" />
+              <% } %>
               <div class="text"><%= projects[i].name %></div>
               <p><%= projects[i].description.slice(0,200) %>...</p>
             </div>

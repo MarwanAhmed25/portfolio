@@ -58,15 +58,26 @@
 <a href="/"><h2>Back</h2></a>
 
 <ul>
+  <% if(project.name) {%>
     <li><span>Name</span>: <%= project.name %></li>
+  <% } %>
+  
+  <% if(project.link) {%>
     <li><span>Demo</span>: <a href="<%= project.link %>">Here</a></li>
+  <% } %>
+
+    <% if(project.code) {%>
     <li><span>code</span>: <a href="<%= project.code %>">Here</a></li>
+      
+    <% } %>
 
 
     <% for(let i= 0; i<project.images.length; i++){ %>
-        <img src="/<%= project.images[i] %>" alt="none"/> 
-
+        <% if(project.images[i]) {%>
+          <img src="/<%= project.images[i] %>" alt="none"/> 
         <% } %>
+
+      <% } %>
 
 
 
