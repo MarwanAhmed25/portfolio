@@ -14,7 +14,6 @@ import projectsRoutes from './handlars/project';
 import typesRoutes from './handlars/type';
 import worksRoutes from './handlars/work';
 import config from './config/config';
-import flash from 'connect-flash';
 dotenv.config();
 
 const production = config.production;
@@ -28,7 +27,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.use(flash());
+
 app.use(cookieParser());
 
 app.set('view engine', 'ejs');
@@ -69,16 +68,14 @@ app.post('/send_mail',(req, res)=>{
     
 });
 app.get('/message',(req, res)=>{
-    req.flash('success','Email sent successfully.');
-    
-    res.redirect('/');
+    res.render('message');
+
     
 }); 
 
 app.get('/works/create', (req, res)=> {
     
     try {
-        
         res.render('create_work');
 
     } catch (e) {

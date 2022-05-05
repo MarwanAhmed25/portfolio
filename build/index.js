@@ -19,7 +19,6 @@ const project_2 = __importDefault(require("./handlars/project"));
 const type_2 = __importDefault(require("./handlars/type"));
 const work_2 = __importDefault(require("./handlars/work"));
 const config_1 = __importDefault(require("./config/config"));
-const connect_flash_1 = __importDefault(require("connect-flash"));
 dotenv_1.default.config();
 const production = config_1.default.production;
 //initial port and app
@@ -31,7 +30,6 @@ app.use(body_parser_1.default.json());
 app.use(body_parser_1.default.urlencoded({
     extended: true
 }));
-app.use((0, connect_flash_1.default)());
 app.use((0, cookie_parser_1.default)());
 app.set('view engine', 'ejs');
 app.set('views', 'front');
@@ -66,8 +64,7 @@ app.post('/send_mail', (req, res) => {
     res.redirect('/message');
 });
 app.get('/message', (req, res) => {
-    req.flash('success', 'Email sent successfully.');
-    res.redirect('/');
+    res.render('message');
 });
 app.get('/works/create', (req, res) => {
     try {
