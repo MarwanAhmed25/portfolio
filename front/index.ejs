@@ -132,7 +132,7 @@
       <h2 class="title">My Projects</h2>
       <div class="carousel owl-carousel">
         <% for(let i = 0; i< projects.length; i++) {%>
-        <a href="projects/<%= projects[i].slug %>" style="margin-top: 10px">
+        <a href="/<%= projects[i].slug %>" style="margin-top: 10px">
           <div class="card" style="color: white">
             <div class="box">
               <% if(!projects[i].images[0]) {%>

@@ -32,7 +32,6 @@ async function show(req, res) {
 }
 async function create(req, res) {
     try {
-        console.log(req.body);
         const images = [req.body.image1, req.body.image2, req.body.image3, req.body.image4, req.body.image5];
         const p = {
             description: req.body.description,
@@ -57,7 +56,7 @@ async function create(req, res) {
 }
 function mainRoutes(app) {
     //app.get('/projects', index);
-    app.get('/projects/:slug', show);
+    app.get('/:slug', show);
     app.post('/create_project', create);
 }
 exports.default = mainRoutes;
