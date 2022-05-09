@@ -96,6 +96,24 @@ app.get('/projects/create', async (req, res)=> {
     }
 });
 
+app.get('/xo-game',(req, res)=>{
+    res.render('xogame/index');
+
+    
+}); 
+
+/* app.get('/landing-page',(req, res)=>{
+    res.render('xogame/index');
+
+    
+}); 
+
+app.get('/weather-journal-app',(req, res)=>{
+    res.render('xogame/index');
+
+    
+});  */
+
 skillsRoutes(app);
 worksRoutes(app);
 projectsRoutes(app);

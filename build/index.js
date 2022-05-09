@@ -84,6 +84,20 @@ app.get('/projects/create', async (req, res) => {
         res.status(400).json(`${e}`);
     }
 });
+app.get('/xo-game', (req, res) => {
+    res.render('xogame/index');
+});
+/* app.get('/landing-page',(req, res)=>{
+    res.render('xogame/index');
+
+    
+});
+
+app.get('/weather-journal-app',(req, res)=>{
+    res.render('xogame/index');
+
+    
+});  */
 (0, skill_2.default)(app);
 (0, work_2.default)(app);
 (0, project_2.default)(app);
